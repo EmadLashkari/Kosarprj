@@ -1,0 +1,120 @@
+﻿{% extends "base.html" %}
+
+
+
+
+{% block main %}
+
+            
+            
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        
+                        <section>
+                            <div class="panel panel-default" style="background: rgb(94, 100, 163); ">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6"><img src="..." alt="..." class="img-circle"></div>
+                                        <div class="col-lg-6 col-sm-6"><h5 style="color: white;">مدیر اتوماسیون</h4></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-6"></div>
+                                        <div class="col-lg-8 col-sm-6">
+                                            <select name="" id="">
+                                                <option value="">مدیر</option>
+                                                <option value="">مدیریت</option>
+                                                <option value="">بارگزاری</option>
+                                                <option value="">مدیریتی</option>
+                                                <option value="">قبل</option>
+                                                <option value="">برنامه</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                        </section>
+
+                    </div>      
+                    
+
+                    <div class="col-lg-9 col-sm-6">
+                        
+                        <section>
+                            <div class="panel panel-default" style="background: rgb(159, 174, 192);">
+                                <div class="panel-body">
+                                    <div class="mail-option">
+                                        <h6 style="color: white;">جستجو در :</h6>
+                                        <div style="display: inline-flex;">
+                                                <select style="width: 100px; font-size: 12px;" class="form-control" name="" id="">
+                                                        <option value="">شماره نامه</option>
+                                                        <option value="">عنوان نامه </option>
+                                                        <option value="">فرستنده نامه</option>
+                                                        <option value=""></option>
+                                                        <option value=""></option>
+                                                </select>
+                                                <input style="width: 300px;" class="form-control" placeholder="جستجو نامه..." type="text" name="" id="">
+                                                <button class="icon-search btn"></button>
+                                        </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                            
+                    </div>
+    
+                </div>
+            
+                <div style="padding: 0 12px;" class="row">
+                        <div class="col-lg-3 col-sm-6">
+
+                            <section>
+                                <div class="panel panel-default" style="background: rgb(159, 174, 192); ">
+                                    <div class="panel-body">
+                                        <div><a href={% url 'modir:get_letter' %}><button class="btn btn-custom">نامه جدید</button></a></div>
+                                         <div class="btn-group-vertical"> 
+                                                <button class="btn btn-custom1">نامه های دریافتی</button>
+                                                <button class="btn btn-custom1">نامه های ارسالی</button>
+                                                <button class="btn btn-custom1">پیش نویس    <span class="badge">42</span></button>
+                                                <button class="btn btn-custom1">بایگانی</button>
+                                                
+                                          </div> 
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+
+                        <div class="col-lg-9 col-sm-6">
+
+                            <section>
+                                
+                                    <div class="panel panel-default" style="background: rgb(253, 254, 255); ">
+                                        <div class="panel-body">
+                                            <table style="width: 700px;" class="table">
+                                                <tr>
+                                                    <th>ردیف</th>
+                                                    <th>فرستنده</th>
+                                                    <th>عنوان</th>
+                                                    <th>توضیحات</th>
+                                                    <th>پیوست</th>
+                                                    <th>تاریخ</th>
+                                                    <th>شماره نامه</th>
+                                                  </tr>
+                                                  
+                                              </table>
+                                        </div>
+                                    </div>
+                                
+                            </section>
+
+                        </div>
+
+                </div>
+            
+                <!-- page end-->
+            </section>
+        
+{% endblock %}
+    

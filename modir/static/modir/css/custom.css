@@ -1,0 +1,46 @@
+.w3-input {
+    overflow-y: scroll;
+    max-height: 100px;
+}
+
+
+.panel {
+    display: flex;
+    align-items: stretch;
+    margin: 0px;
+    
+}
+
+.btn:hover {
+        background: rgb(213, 229, 244); 
+}
+
+.btn:active {
+    background: rgb(210, 227, 244); 
+}
+
+.btn:visited {
+    background: rgb(210, 227, 244); 
+}
+
+.panel-body {
+    margin: 0px;
+    display: block;
+}
+.btn-custom {
+    width: 250px;
+    background: rgb(228, 55, 55);
+}
+.btn-group-vertical {
+    width: 250px;
+}
+.btn-custom1 {
+    text-align: right;
+    background: rgb(159, 174, 192);
+}
+
+.custom-checkbox {
+    display: flex;
+    background: rgb(196, 11, 11);
+    color: brown;
+}

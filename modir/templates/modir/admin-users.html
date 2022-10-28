@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+
+<aside class="lg-side">
+    <div class="inbox-head">
+        <div class="mail-option">
+            <div>
+                <p>  مدیریت کاربران</p>
+
+                <a class="btn btn-info" style="float: left;">اجرای عملیات</a>
+                <select class="selectTag" name="action">
+                    <option value="1">         تغییر به مدیر</option>
+                    <option value="2">          تغییر به دبیرخانه </option>
+                    <option value="3">       تغییر به کاربر عادی </option>
+                    <option value="4">    حذف   </option>
+                </select>
+                <a href={% url 'users:user_add' %} class="btn btn-info" style="float: right;margin-left:15px; ">   کاربر جدید  </a>
+                
+            </div>
+        </div>
+    </div>
+
+
+<form action="" method="post">
+    <div class="inbox-body">
+
+        <table class="table   table-hover">
+            <thead>
+                <tr>
+                  <th>کد پرسنلی</th>
+                  <th>نام و نام خانوادگی</th>
+                  <th>موبایل</th>
+                  <th>ایمیل</th>
+                  <th>نام کاربری</th>
+                  <th>نوع کاربری</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{user.personalCode}}</td>
+                  <td>{{user.name}}</td>
+                  <td>{{user.mobileNumber}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.username}}</td>
+                  <td>{{user.group}}</td>
+                </tr>
+</form>
+        </aside>
+
+{% endblock%}

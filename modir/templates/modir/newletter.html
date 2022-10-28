@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href={% static 'modir/css/custom.css'%}>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% block main %}
+
+{% if perms.modir.add_letter %}
+    <center><h3>نامه جدید</h3></center>
+    <br>
+    
+            <form action="" method=POST>
+                
+                
+                {% csrf_token %}
+            <div class="w3-card-4">
+                <div class="form-row">
+                    <div class="form-group col-lg-4">
+                        <label for="">ارسال کننده  :  </label>
+                        {{form.position}}
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <label for="">امضا کننده  :  </label>
+                        {{form.signatory}}
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <label for="">انتخاب دبیرخانه  :  </label>
+                        {{form.secretariat}}
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-lg-6">
+                        <label for="">گیرندگان  :  </label>
+                        {{form.receivers}}
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="">رونوشت  :  </label>
+                        {{form.Transcript}}
+                    </div>
+                    
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group col-lg-5">                       
+                        {{form.subtitle}}
+                    </div>
+                    <div class="form-group col-lg-3">
+                        {{form.discription}}
+                    </div>
+                    <div class="form-group col-lg-2">
+                        {{form.ready_text}}
+                    </div>
+                    <div class="form-group col-lg-2">
+                        {{form.size_letter}}
+                    </div>
+                    
+                </div>
+            
+        </form>
+{% else %}
+        <center><div class="alert alert-warning" role="alert">
+            <h3>
+            شما به این صفحه دسترسی ندارید لطفا برای برگشت 
+            <a href={% url 'modir:home' %} class="alert-link">کلیک</a>
+            کنید</h3>
+          </div> </center>
+        
+
+{% endif %}
+
+
+{% endblock %}
