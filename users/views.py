@@ -7,7 +7,7 @@ from .models import AddUser
 from django.urls import reverse
 # Create your views here hoow.
 
- class UserCreat(CreateView):
+ #class UserCreat(CreateView):
 #     model = AddUser
 #     fields = ['personalCode','name','mobileNumber','phoneNumber','email',
 #     'address','username','password','group','sign','picture']
