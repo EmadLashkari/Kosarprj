@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from .forms import AddUserForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import AddUser
 from django.urls import reverse
 # Create your views here hoow.
 
@@ -21,10 +20,6 @@ def user_add(request):
         
         if form.is_valid():
             form.save()
-
-            obj = AddUser.objects.first()
-            User.objects.create_user(getattr(obj, 'username'),getattr(obj, 'email')
-            , getattr(obj, 'password'))
 
             return HttpResponseRedirect(reverse('modir:adminUsers'))
 
