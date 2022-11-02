@@ -9,4 +9,5 @@ urlpatterns = [
     path('blank/',views.blank ),
     path('letter/new/',views.get_letter , name='get_letter'),
     path('adminUsers/',views.adminUsers,name='adminUsers'),
+    path('level/',views.level,name='level'),
 ]
