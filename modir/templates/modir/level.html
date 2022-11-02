@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+
+
+
+{% block main %}
+      
+
+       
+            
+
+                <style>
+                    .selectTag {
+                        float: left;
+                        margin-left: 10px;
+                        font-family: yekan;
+                        font-size: 10 . pt;
+                        padding: 1px;
+                    }
+                </style>
+                <aside class="lg-side">
+                    <div class="inbox-head">
+                        <div class="mail-option">
+                            <div>
+                <p class="title">
+                        مدیریت سلسله مراتب
+                </p>
+                <a class="btn btn-info" style="float: left; " >
+                    اجرای عملیات
+                </a>
+
+                <select class="selectTag" name="action">
+                    <option value="1"> حذف  </option>
+                </select>
+                <a href="addLevel" class="btn btn-info" style="float: right;margin-left:15px; ">
+                    پست جدید        </a>
+                <script>
+                    function submitFormMulti() {
+                        var actionSelected = $('.selectTag option:selected').val();
+                        var action = '';
+                        if (actionSelected == 1) {
+                            action = 'deleteLevel';
+                        }
+                        var form = $('form');
+                        form.attr('action', action);
+                        form.submit();
+                    }
+                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                <form action="" method="post">
+                    <div class="inbox-body">
+                        <ul style="display: block"><i class="icon-minus"></i>&nbsp;ریشه اصلی
+                                                        <li id="parent59" style="padding-right: 30px">
+                                                                          <i class="icon-plus" onclick="showParent(this,'59')" title="نمایش زیر مجموعه"></i>&nbsp;
+
+                                                                           سمت:کتابخانه |
+                                    نام محترمانه:    رییس کتابخانه |
+                                        حق امضاء: دارد |
+                                     نام کاربر:   اختصاص داده نشده |
+                                        <input type="checkbox" name="id[]" value="59">
+                                            <a href="addLevel/59"><i class="icon-edit"></i></a>
+                                    </li>
+                                                            <li id="parent63" style="padding-right: 30px">
+                                       <i class="icon-minus"></i>&nbsp;                                سمت:مدیر مالی |
+                                    نام محترمانه:    مدیر مالی |
+                                        حق امضاء: دارد |
+                                     نام کاربر:   اختصاص داده نشده |
+                                        <input type="checkbox" name="id[]" value="63">
+                                            <a href="addLevel/63"><i class="icon-edit"></i></a>
+                                    </li>
+                                                </ul>
+                    </div>
+                </form>
+                </aside>
+           
+        
+
+{% endblock %}
