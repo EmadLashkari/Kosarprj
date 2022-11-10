@@ -31,7 +31,8 @@
             <thead>
                 <tr>
                   <th>کد پرسنلی</th>
-                  <th>نام و نام خانوادگی</th>
+                  <th>نام</th>
+                  <th>نام خانوادگی</th>
                   <th>موبایل</th>
                   <th>ایمیل</th>
                   <th>نام کاربری</th>
@@ -39,14 +40,18 @@
                 </tr>
               </thead>
               <tbody>
+                {% for fields in field %}
+                
                 <tr>
-                  <td>{{user}}</td>
-                  <td>{{first}}</td>
-                  <td>{{user.mobileNumber}}</td>
-                  <td>{{user.email}}</td>
-                  <td>{{user.username}}</td>
-                  <td>{{user.group}}</td>
+                  <td>{{fields.userprofile.personalcode}}</td>
+                  <td>{{fields.first_name}}</td>
+                  <td>{{fields.last_name}}</td>
+                  <td></td>
+                  <td>{{fields.email}}</td>
+                  <td>{{fields.username}}</td>
+                  <td>{{fields.groups}}</td>
                 </tr>
+                {% endfor %}
 </form>
         </aside>
 

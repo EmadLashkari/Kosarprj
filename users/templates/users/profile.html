@@ -1,1 +1,39 @@
-Hello EMad
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href={% static 'modir/css/custom.css'%}>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% block main %}
+
+
+    <center><h3>ایجاد کاربر جدید </h3></center>
+    <br>
+    
+            <form class="form-group" action="" method=POST>
+                
+                
+                {% csrf_token %}
+                
+               
+                <div class="form-row">
+                    
+                    <div class="form-group col-lg-12">
+                        <label for=""> </label>
+                        {{ form.as_p }}
+                    </div>
+                </div>
+                
+
+
+
+                <input class="btn btn-primery" type="submit" value="ثبت کاربر جدید" >
+            
+        </form>
+
+        <!-- <center><div class="alert alert-warning" role="alert">
+            <h3>
+            شما به این صفحه دسترسی ندارید لطفا برای برگشت 
+            <a href={% url 'modir:home' %} class="alert-link">کلیک</a>
+            کنید</h3>
+          </div> </center> !-->
+        
+          {% endblock%}

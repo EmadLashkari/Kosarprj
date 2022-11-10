@@ -4,46 +4,45 @@ from django.contrib.auth.models import User
 from .forms import AddUserForm, Profile
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
+from .models import UserProfile
+from django.views import generic
+from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm , UserChangeForm
+
 # Create your views here hoow.
+class Profile(generic.UpdateView):
+    model = UserProfile
+    fields = ['user','personalcode']
+    template_name = 'users/profile.html'
+    success_url = reverse_lazy('modir:adminUsers')
 
- #class UserCreat(CreateView):
-#     model = AddUser
-#     fields = ['personalCode','name','mobileNumber','phoneNumber','email',
-#     'address','username','password','group','sign','picture']
-
-def profile(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = Profile(request.POST)
-        
-        if form.is_valid():
-            form.save()
-
-            return HttpResponseRedirect(reverse('modir:adminUsers'))
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = AddUserForm()
+    def get_object(self):
+        return self.request.user
 
 
-    return render(request , 'users/profile.html')
+class AddUser(generic.CreateView):
+    form_class = AddUserForm
+    template_name = 'users/add_user.html'
+    success_url = reverse_lazy('modir:adminUsers')
 
-def user_add(request):
+    def get_object(self):
+        return self.request.user
+
+# def user_add(request):
     
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = AddUserForm(request.POST)
+#     # if this is a POST request we need to process the form data
+#     if request.method == 'POST':
+#         # create a form instance and populate it with data from the request:
+#         form = AddUserForm(request.POST)
         
-        if form.is_valid():
-            form.save()
+#         if form.is_valid():
+#             form.save()
 
-            return HttpResponseRedirect(reverse('modir:adminUsers'))
+#             return HttpResponseRedirect(reverse('modir:adminUsers'))
 
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = AddUserForm()
+#     # if a GET (or any other method) we'll create a blank form
+#     else:
+#         form = AddUserForm()
 
    
-    return render(request, 'users/add_user.html',{'form':form})
+#     return render(request, 'users/add_user.html',{'form':form})

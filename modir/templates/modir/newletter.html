@@ -12,7 +12,9 @@
                 
                 
                 {% csrf_token %}
-            <div class="w3-card-4">
+                {{form.as_p}}
+                <input class="btn btn-primery" type="submit" value="ایجاد نامه" >
+            <!-- <div class="w3-card-4">
                 <div class="form-row">
                     <div class="form-group col-lg-4">
                         <label for="">ارسال کننده  :  </label>
@@ -57,7 +59,7 @@
                         {{form.size_letter}}
                     </div>
                     
-                </div>
+                </div> -->
             
         </form>
 {% else %}
@@ -67,7 +69,7 @@
             <a href={% url 'modir:home' %} class="alert-link">کلیک</a>
             کنید</h3>
           </div> </center>
-        
+          
 
 {% endif %}
 
