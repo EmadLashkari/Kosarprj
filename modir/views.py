@@ -6,12 +6,12 @@ from .forms import LetterForm, NewLevelFrom
 from django.contrib.auth.models import AbstractUser
 from .models import Letter
 from django.contrib.auth.backends import ModelBackend
-from django.contrib.auth.models import User
+from users.models import CustomUser
 from django.contrib.auth import get_user_model
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm , UserChangeForm
-from users.models import UserProfile
+# from users.models import UserProfile
 
 
 class new_level(CreateView):
@@ -26,10 +26,10 @@ def level(request):
     return render(request , 'modir/level.html')
 
 def adminUsers(request):
-    userfields = User.objects.all()
-    profile = UserProfile.objects.all()
+    userfields = CustomUser.objects.all()
+    # profile = UserProfile.objects.all()
     
-    return render(request,'modir/admin-users.html',{'field':userfields,'profile':profile})
+    return render(request,'modir/admin-users.html',{'field':userfields})
 
 class get_letter(CreateView):
     form_class = LetterForm

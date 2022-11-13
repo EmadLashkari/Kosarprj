@@ -1,18 +1,19 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.contrib.auth.models import User
-from .forms import AddUserForm, Profile
+from users.models import CustomUser
+from .forms import AddUserForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
-from .models import UserProfile
+# from .models import UserProfile
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm , UserChangeForm
 
 # Create your views here hoow.
+
 class Profile(generic.UpdateView):
-    model = UserProfile
-    fields = ['user','personalcode']
+    model = CustomUser
+    fields = ['personalcode','mobileNumber','phoneNumber','address','first_name','last_name', 'username', 'email','groups']
     template_name = 'users/profile.html'
     success_url = reverse_lazy('modir:adminUsers')
 

@@ -15,6 +15,11 @@
                 
                 
                 <div class="form-row">
+
+                    <div class="form-group col-lg-4">
+                        <label for="">کد پرسنلی :</label>
+                        {{form.personalcode}}
+                    </div>
                     
                     <div class="form-group col-lg-4">
                         <label for="">نام :</label>
@@ -26,10 +31,6 @@
                         {{form.last_name}}
                     </div>
 
-                    <div class="form-group col-lg-4">
-                        <label for="">نام کاربری :</label>
-                        {{form.username}}
-                    </div>
                 </div>
            
 
@@ -41,31 +42,49 @@
                         {{form.email}}
                     </div>
 
-                    <div class="form-group col-lg-4">
-                        <label for="">رمز عبور  :  </label>
-                        {{form.password1}}
-                    </div>
-
-                    <div class="form-group col-lg-4">
-                        <label for="">تکرار رمز عبور  :  </label>
-                        {{form.password2}}
+                    <div class="form-group col-lg-8">
+                        <label for="">آدرس  :  </label>
+                        {{form.address}}
                     </div>
                     
                 </div>
 
                 <div class="form-row">
 
-                    <div class="form-group col-lg-6">
-                        <label for="">کد پرسنلی  :  </label>
-                        {{ form.personalcode }}
+                    <div class="form-group col-lg-4">
+                        <label for="">نام کاربری  :  </label>
+                        {{ form.username }}
                     </div>
 
-                    <div class="form-group col-lg-6">
-                        <label for="">گروه کاربری  :  </label>
-                        {{ form.groups }}
+                    <div class="form-group col-lg-4">
+                        <label for="">رمز عبور  :  </label>
+                        {{ form.password1 }}
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                        <label for="">تکرار رمز عبور  :  </label>
+                        {{ form.password2 }}
                     </div>
 
                     
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-lg-4">
+                        <label for="">شماره موبایل  :  </label>
+                        {{ form.mobileNumber }}
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                        <label for="">تلفن  :  </label>
+                        {{ form.phoneNumber }}
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                        <label for="">سطح دسترسی  :  </label>
+                        {{form.groups}}
+                    </div>
                 </div>
 
 
