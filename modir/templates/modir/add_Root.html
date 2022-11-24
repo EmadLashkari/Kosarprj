@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href={% static 'modir/css/custom.css'%}>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% block main %}
+
+
+    <center><h3>ایجاد پست </h3></center>
+    <br>
+    
+            <form action="" method=POST>
+                
+                
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="ایجاد پست" >
+        </form>
+
+
+
+{% endblock %}

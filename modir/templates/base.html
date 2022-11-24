@@ -9,7 +9,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.html">
 
-    <title>Blank</title>
+    <title>اتوماسیون اداری کوثر | صفحه اصلی   </title>
 
     <!-- Bootstrap core CSS -->
     <link href={% static "modir/css/bootstrap.min.css" %} rel="stylesheet">
@@ -295,13 +295,16 @@
                             <span>مدیریت</span>
                             <span class="arrow"></span>
                         </a>
+                        {% if perms.modir.add_letter %}
                         <ul class="sub">
                             <li><a class="" href={% url 'modir:adminUsers' %}>مدیریت کاربران</a></li>
                             <li><a class="" href={% url 'modir:level' %}>سلسله مراتب</a></li>
-                            <li><a class="" href='#'>انتصاب پست</a></li>
+                            <li><a class="" href={% url 'modir:PostAp' %}>انتصاب پست</a></li>
+                            <li><a class="" href={% url 'modir:Root' %}> ریشه</a></li>
                             <li><a class="" href="">مدیریت دبیرخانه</a></li>
                         </ul>
                     </li>
+                    {% endif %}
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
                             <i class="icon-cog"></i>
