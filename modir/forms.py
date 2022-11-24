@@ -1,18 +1,35 @@
 from dataclasses import field
 from django import forms
 from django.forms import ModelForm
-from .models import Letter , Level
+from .models import Letter , Level , PostAppoinment ,Root
 
+class RootForm(ModelForm):
+    class Meta:
+        model = Root
+        fields = ['name','sign']
+        labels = {
+            'name':'نام ریشه ',
+            'sign':'حق امضا',
+        }
+
+class PostAppoinmentForm(ModelForm):
+    class Meta:
+        model = PostAppoinment
+        fields = ['post','user']
+        labels = {
+            'post':'انتخاب پست ',
+            'user':'انتخاب کارمند',
+        }
 
 class NewLevelFrom(ModelForm):
     class Meta:
         model = Level
-        fields = ['name','nameplz','sign','parentID']
+        fields = ['name','nameplz','sign','root']
         labels = {
             'name':'نام'
             ,'nameplz':'نام محترمانه'
             ,'sign':'حق امضا',
-            'parentID':'شماره جدول'
+            'root':'ریشه'
 
         }
 

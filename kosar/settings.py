@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'modir.apps.ModirConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'settings.apps.SettingsConfig'
     
 ]
 
@@ -79,8 +80,12 @@ WSGI_APPLICATION = 'kosar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'Auto_Mation_Kosar',
+        'USER':'Emad',
+        'PASSWORD':'Em@d',
+        'HOST':'localhost',
+        'PORT':'3609'
     }
 }
 

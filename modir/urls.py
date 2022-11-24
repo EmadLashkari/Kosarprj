@@ -11,4 +11,6 @@ urlpatterns = [
     path('adminUsers/',views.adminUsers,name='adminUsers'),
     path('level/',views.level,name='level'),
     path('new_level/',views.new_level.as_view(),name='new_level'),
+    path('postAppoinment/',views.postAppoinment.as_view(),name='PostAp'),
+    path('Root/',views.Root.as_view(),name='Root')
 ]

@@ -28,7 +28,7 @@ class AddUserForm(UserCreationForm):
     username = forms.CharField(max_length = 50,widget=forms.TextInput(attrs={'class':'form-control'}))
     password1= forms.CharField(widget = forms.PasswordInput(attrs={'class':'form-control'}))
     password2= forms.CharField(widget = forms.PasswordInput(attrs={'class':'form-control'}))
-    groups = forms.Select(attrs={'class':'form-control'})
+    # groups = forms.ChoiceField()
     
     class Meta:
         model = CustomUser

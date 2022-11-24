@@ -2,9 +2,9 @@ import imp
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import LetterForm, NewLevelFrom
+from .forms import LetterForm, NewLevelFrom , PostAppoinmentForm , RootForm
 from django.contrib.auth.models import AbstractUser
-from .models import Letter
+from .models import Letter 
 from django.contrib.auth.backends import ModelBackend
 from users.models import CustomUser
 from django.contrib.auth import get_user_model
@@ -13,6 +13,22 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm , UserChangeForm
 # from users.models import UserProfile
 
+class Root(CreateView):
+    form_class = RootForm
+    template_name = 'modir/add_Root.html'
+    success_url = reverse_lazy('modir:adminUsers')
+
+    def get_object(self):
+        return self.request.user
+
+
+class postAppoinment(CreateView):
+    form_class = PostAppoinmentForm
+    template_name = 'modir/PostAp.html'
+    success_url = reverse_lazy('modir:adminUsers')
+
+    def get_object(self):
+        return self.request.user
 
 class new_level(CreateView):
     form_class = NewLevelFrom
