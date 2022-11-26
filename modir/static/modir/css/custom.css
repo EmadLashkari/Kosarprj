@@ -29,18 +29,18 @@
 }
 .btn-custom {
     width: 250px;
-    background: rgb(228, 55, 55);
+    background: rgb(216, 114, 114);
 }
 .btn-group-vertical {
     width: 250px;
 }
 .btn-custom1 {
     text-align: right;
-    background: rgb(159, 174, 192);
+    background: rgb(212, 223, 238);
 }
 
 .custom-checkbox {
     display: flex;
-    background: rgb(196, 11, 11);
-    color: brown;
+    background: rgb(216, 88, 88);
+    color: rgb(230, 109, 109);
 }

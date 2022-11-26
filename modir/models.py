@@ -2,6 +2,9 @@ from operator import mod
 from django.db import models
 from users.models import CustomUser
 
+class DabirKhone(models.Model):
+    pass
+
 class Root(models.Model):
     name = models.CharField(max_length=100)
     sign = models.BooleanField()
