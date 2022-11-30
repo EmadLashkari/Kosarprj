@@ -17,7 +17,7 @@
                     <option value="3">       تغییر به کاربر عادی </option>
                     <option value="4">    حذف   </option>
                 </select>
-                <a href={% url 'users:user_add' %} class="btn btn-info" style="float: right;margin-left:15px; ">   کاربر جدید  </a>
+                <a href={% url 'users:user_add' user.id %} class="btn btn-info" style="float: right;margin-left:15px; ">   کاربر جدید  </a>
                 
             </div>
         </div>
@@ -37,6 +37,7 @@
                   <th>ایمیل</th>
                   <th>نام کاربری</th>
                   <th>نوع کاربری</th>
+                  <th>انتخاب</th>
                 </tr>
               </thead>
               <tbody>
@@ -50,6 +51,7 @@
                   <td>{{fields.email}}</td>
                   <td>{{fields.username}}</td>
                   <td>{{fields.groups}}</td>
+                  <td><a class="mini tooltips" href={% url 'users:profile' fields.id %} data-placement="top" data-original-title="ویرایش"><i class="icon-edit"></i></a></td>
                 </tr>
                 {% endfor %}
 </form>

@@ -279,7 +279,7 @@
         <!--header end-->
         <!--sidebar start-->
         <aside>
-            <div id="sidebar" class="nav-collapse ">
+            <div id="sidebar1" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
@@ -301,7 +301,7 @@
                             <li><a class="" href={% url 'modir:level' %}>سلسله مراتب</a></li>
                             <li><a class="" href={% url 'modir:PostAp' %}>انتصاب پست</a></li>
                             <li><a class="" href={% url 'modir:Root' %}> ریشه</a></li>
-                            <li><a class="" href="">مدیریت دبیرخانه</a></li>
+                            <li><a class="" href={% url 'modir:dabirkhone' %}>مدیریت دبیرخانه</a></li>
                         </ul>
                     </li>
                     {% endif %}
@@ -312,7 +312,7 @@
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href={% url 'users:profile' %}>پروفایل</a></li>
+                            <li><a class="" href={% url 'users:profile' user.id %}>پروفایل</a></li>
                             <li><a class="" href="">تعییر رمز عبور</a></li>
                             
                         </ul>

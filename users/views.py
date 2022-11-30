@@ -17,8 +17,10 @@ class Profile(generic.UpdateView):
     template_name = 'users/profile.html'
     success_url = reverse_lazy('modir:adminUsers')
 
+    
+    
     def get_object(self):
-        return self.request.user
+        return self.model.objects.get(id = self.kwargs.get('id', None))
 
 
 class AddUser(generic.CreateView):

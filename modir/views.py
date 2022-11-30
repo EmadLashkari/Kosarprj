@@ -2,7 +2,7 @@ import imp
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import LetterForm, NewLevelFrom , PostAppoinmentForm , RootForm
+from .forms import LetterForm, NewLevelFrom , PostAppoinmentForm , RootForm , DabirKhoneForm
 from django.contrib.auth.models import AbstractUser
 from .models import Letter 
 from django.contrib.auth.backends import ModelBackend
@@ -12,6 +12,15 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm , UserChangeForm
 # from users.models import UserProfile
+
+class AddDabirkhone(CreateView):
+    form_class = DabirKhoneForm
+    template_name = 'modir/add_dabirkhone.html'
+    success_url = reverse_lazy('modir:dabirkhone')
+
+    def get_object(self):
+        return self.request.user
+
 
 class Root(CreateView):
     form_class = RootForm
@@ -63,3 +72,6 @@ def blank(request):
 
 def LoginView(request):
     return HttpResponseRedirect(reverse('login'))
+
+def dabirkhone(request):
+    return render(request,'modir/dabirkhone.html')

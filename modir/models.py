@@ -2,8 +2,6 @@ from operator import mod
 from django.db import models
 from users.models import CustomUser
 
-class DabirKhone(models.Model):
-    pass
 
 class Root(models.Model):
     name = models.CharField(max_length=100)
@@ -12,6 +10,17 @@ class Root(models.Model):
     def __str__(self):
         return self.name
 
+class DabirKhone(models.Model):
+    name = models.CharField(max_length=100)
+    choiceDabirKhone = models.ForeignKey(Root , on_delete=models.CASCADE)
+    harfVarede = models.CharField(max_length=100)
+    harfShomareDakheli = models.CharField(max_length=100)
+    harfShomareSadere = models.CharField(max_length=100)
+    shomareNameAghazin = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+        
         
 class Level(models.Model):
     name = models.CharField(max_length = 51)
@@ -38,5 +47,5 @@ class Letter(models.Model):
 
 
 class PostAppoinment(models.Model):
-    post = models.ForeignKey(Level , on_delete=models.CASCADE , related_name= 'post')
+    post = models.ForeignKey(Root , on_delete=models.CASCADE , related_name= 'post')
     user = models.ForeignKey(CustomUser , on_delete=models.CASCADE , related_name= 'user')

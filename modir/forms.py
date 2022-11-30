@@ -1,7 +1,22 @@
 from dataclasses import field
 from django import forms
 from django.forms import ModelForm
-from .models import Letter , Level , PostAppoinment ,Root
+from .models import Letter , Level , PostAppoinment ,Root , DabirKhone
+
+
+class DabirKhoneForm(ModelForm):
+    class Meta:
+        model = DabirKhone
+        fields = ['name','choiceDabirKhone','harfVarede','harfShomareDakheli','harfShomareSadere','shomareNameAghazin']
+        labels = {
+            'name':'نام دبیرخانه',
+            'choiceDabirKhone':'انتخاب دبیرخانه',
+            'harfVarede':'حرف وارده',
+            'harfShomareDakheli':'حرف شماره داخلی',
+            'harfShomareSadere':'حرف شماره صادره',
+            'shomareNameAghazin':'شماره نام اغازین',
+        }
+
 
 class RootForm(ModelForm):
     class Meta:
