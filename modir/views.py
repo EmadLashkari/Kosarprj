@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import LetterForm, NewLevelFrom , PostAppoinmentForm , RootForm , DabirKhoneForm
 from django.contrib.auth.models import AbstractUser
-from .models import Letter 
+from .models import Letter , DabirKhone, PostAppoinment , Level
 from django.contrib.auth.backends import ModelBackend
 from users.models import CustomUser
 from django.contrib.auth import get_user_model
@@ -48,7 +48,8 @@ class new_level(CreateView):
         return self.request.user
 
 def level(request):
-    return render(request , 'modir/level.html')
+    level = Level.objects.all()
+    return render(request , 'modir/level.html', {'Level':level})
 
 def adminUsers(request):
     userfields = CustomUser.objects.all()
@@ -64,8 +65,12 @@ class get_letter(CreateView):
     def get_object(self):
         return self.request.user
 
+    
+
 def home(request):
-    return render(request,'modir/index.html')
+    letter = Letter.objects.all()
+
+    return render(request,'modir/index.html', {'letter':letter})
 
 def blank(request):
     return render(request,'modir/blank.html')
@@ -74,4 +79,6 @@ def LoginView(request):
     return HttpResponseRedirect(reverse('login'))
 
 def dabirkhone(request):
-    return render(request,'modir/dabirkhone.html')
+    dabir = DabirKhone.objects.all()
+    post = PostAppoinment.objects.all()
+    return render(request,'modir/dabirkhone.html', {'dabir': dabir, 'Post':post })

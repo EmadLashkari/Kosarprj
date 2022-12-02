@@ -50,30 +50,37 @@
                         </div>
                     </div>
 
-                <form action="" method="post">
-                    <div class="inbox-body">
-                        <ul style="display: block"><i class="icon-minus"></i>&nbsp;ریشه اصلی
-                                                        <li id="parent59" style="padding-right: 30px">
-                                                                          <i class="icon-plus" onclick="showParent(this,'59')" title="نمایش زیر مجموعه"></i>&nbsp;
+                    <table class="table   table-hover">
+                        <tbody>
+                        <tr class="row_header">
+                            <td class="view-message">سمت</td>
+                            <td class="view-message">نام محترمانه</td>
+                            <td class="view-message">حق امضا</td>
+                            <td class="view-message">ریشه</td>
+                            
+                        </tr>
+                        {% for level in Level %}
+                            
+                            <tr>
+                                <td>{{level.name}}</td>
+                                <td>{{level.nameplz}}</td>
+                                {% if level.sign %}
+                                <td>دارد</td>
+                                {% else %}
+                                <td>ندارد</td>
+                                {% endif %}
+                                <td>{{level.root}}</td>
+                                
+                                <td>
+                                    <input type="checkbox" name="id[]" value="1">
+                                    <a href="addDabirkhone/1"><i class="icon-edit"></i></a>
+                                </td>
+                                
+                                {% endfor %}
+                            
+                                                    </tbody>
 
-                                                                           سمت:کتابخانه |
-                                    نام محترمانه:    رییس کتابخانه |
-                                        حق امضاء: دارد |
-                                     نام کاربر:   اختصاص داده نشده |
-                                        <input type="checkbox" name="id[]" value="59">
-                                            <a href="addLevel/59"><i class="icon-edit"></i></a>
-                                    </li>
-                                                            <li id="parent63" style="padding-right: 30px">
-                                       <i class="icon-minus"></i>&nbsp;                                سمت:مدیر مالی |
-                                    نام محترمانه:    مدیر مالی |
-                                        حق امضاء: دارد |
-                                     نام کاربر:   اختصاص داده نشده |
-                                        <input type="checkbox" name="id[]" value="63">
-                                            <a href="addLevel/63"><i class="icon-edit"></i></a>
-                                    </li>
-                                                </ul>
-                    </div>
-                </form>
+                    </table>
                 </aside>
            
         

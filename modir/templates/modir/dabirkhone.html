@@ -48,12 +48,12 @@
 
             <form action="" method="post">
                 <div class="inbox-body">
-
-                    <!-- <table class="table   table-hover">
+                    
+                    <table class="table   table-hover">
                         <tbody>
                         <tr class="row_header">
-                            <td class="view-message ">ردیف</td>
                             <td class="view-message">نام دبیرخانه</td>
+                            <td class="view-message">نام کاربر </td>
                             <td class="view-message">حرف شماره نامه وارده</td>
                             <td class="view-message">حرف شماره نامه داخلی</td>
                             <td class="view-message">حرف شماره نامه صادره</td>
@@ -61,112 +61,28 @@
                             <td class="view-message">پست انتصاب داده شده</td>
                             <td class="view-message ">انتخاب </td>
                         </tr>
-                                                    <tr>
-                                <td> 1 </td>
-                                <td>  </td>
-                                <td> و </td>
-                                <td> د </td>
-                                <td> ص </td>
-                                <td> 6401 </td>
-                                <td> Test  </td>
+                        {% for Dabir in dabir %}
+                            {% for post in Post %}
+                            <tr>
+                                <td>{{Dabir.name}}</td>
+                                <td>{{Dabir.choiceDabirKhone}}</td>
+                                <td>{{Dabir.harfVarede}}</td>
+                                <td>{{Dabir.harfShomareDakheli}}</td>
+                                <td>{{Dabir.harfShomareSadere}}</td>
+                                <td>{{Dabir.shomareNameAghazin}}</td>
+                                <td>{{post.post}}</td>
+                                
                                 <td>
                                     <input type="checkbox" name="id[]" value="1">
                                     <a href="addDabirkhone/1"><i class="icon-edit"></i></a>
                                 </td>
-                            </tr>
-                                                        <tr>
-                                <td> 2 </td>
-                                <td> دبیرخانه مرکز تحقیقات </td>
-                                <td> م و </td>
-                                <td>  م د </td>
-                                <td> م ص </td>
-                                <td> 120 </td>
-                                <td> دبیرخانه مرکزتحقیقات  </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="2">
-                                    <a href="addDabirkhone/2"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td> 3 </td>
-                                <td> دبیرخانه همایش </td>
-                                <td> و هـ </td>
-                                <td>  </td>
-                                <td> ص هـ </td>
-                                <td> 5 </td>
-                                <td> دبیرخانه همایش  </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="3">
-                                    <a href="addDabirkhone/3"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td> 4 </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td> دبیرکل  </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="4">
-                                    <a href="addDabirkhone/4"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td> 5 </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td> خدمات  </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="5">
-                                    <a href="addDabirkhone/5"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td> 6 </td>
-                                <td> test </td>
-                                <td> v </td>
-                                <td> d </td>
-                                <td> s </td>
-                                <td> 1 </td>
-                                <td>   </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="6">
-                                    <a href="addDabirkhone/6"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td> 7 </td>
-                                <td> باغبانی </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td> خدمات  </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="7">
-                                    <a href="addDabirkhone/7"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td> 8 </td>
-                                <td> اشرفی </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td>  </td>
-                                <td> کارپرداز و پیک  </td>
-                                <td>
-                                    <input type="checkbox" name="id[]" value="8">
-                                    <a href="addDabirkhone/8"><i class="icon-edit"></i></a>
-                                </td>
-                            </tr>
+                                {% endfor %}
+                                {% endfor %}
+                            
                                                     </tbody>
-                    </table> -->
+
+                    </table>
+                    
                 </div> 
             </form>
         </aside>

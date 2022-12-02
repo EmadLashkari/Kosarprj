@@ -295,7 +295,7 @@
                             <span>مدیریت</span>
                             <span class="arrow"></span>
                         </a>
-                        {% if perms.modir.add_letter %}
+                    {% if perms.modir.add_letter %}
                         <ul class="sub">
                             <li><a class="" href={% url 'modir:adminUsers' %}>مدیریت کاربران</a></li>
                             <li><a class="" href={% url 'modir:level' %}>سلسله مراتب</a></li>

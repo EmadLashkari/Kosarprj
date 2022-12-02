@@ -94,7 +94,7 @@
                                         <div class="panel-body">
                                             <table style="width: 700px;" class="table">
                                                 <tr>
-                                                    <th>ردیف</th>
+                                                    
                                                     <th>فرستنده</th>
                                                     <th>عنوان</th>
                                                     <th>توضیحات</th>
@@ -102,7 +102,23 @@
                                                     <th>تاریخ</th>
                                                     <th>شماره نامه</th>
                                                   </tr>
-                                                  
+                                                <!-- {% for Letter in letter %}
+                                                  <tr>
+                                                    <th>{{Letter.position}}</th>
+                                                    <th>{{Letter.subtitle}}</th>
+                                                    <th>{{Letter.discription}}</th>
+                                                    
+                                                  </tr>
+                                                  {% endfor %} -->
+
+                                                  {% for post in Post %}
+                                                  <tr>
+                                                    <th>{{post.post}}</th>
+                                                    <th>{{post.user}}</th>
+                                                    
+                                                    
+                                                  </tr>
+                                                  {% endfor %}
                                               </table>
                                         </div>
                                     </div>

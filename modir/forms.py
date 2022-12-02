@@ -10,7 +10,7 @@ class DabirKhoneForm(ModelForm):
         fields = ['name','choiceDabirKhone','harfVarede','harfShomareDakheli','harfShomareSadere','shomareNameAghazin']
         labels = {
             'name':'نام دبیرخانه',
-            'choiceDabirKhone':'انتخاب دبیرخانه',
+            'choiceDabirKhone':'انتخاب کاربر دبیرخانه',
             'harfVarede':'حرف وارده',
             'harfShomareDakheli':'حرف شماره داخلی',
             'harfShomareSadere':'حرف شماره صادره',
@@ -37,6 +37,7 @@ class PostAppoinmentForm(ModelForm):
         }
 
 class NewLevelFrom(ModelForm):
+    
     class Meta:
         model = Level
         fields = ['name','nameplz','sign','root']

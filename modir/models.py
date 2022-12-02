@@ -12,7 +12,7 @@ class Root(models.Model):
 
 class DabirKhone(models.Model):
     name = models.CharField(max_length=100)
-    choiceDabirKhone = models.ForeignKey(Root , on_delete=models.CASCADE)
+    choiceDabirKhone = models.ForeignKey(CustomUser , on_delete=models.CASCADE)
     harfVarede = models.CharField(max_length=100)
     harfShomareDakheli = models.CharField(max_length=100)
     harfShomareSadere = models.CharField(max_length=100)
@@ -36,7 +36,7 @@ class Letter(models.Model):
     discription = models.CharField(max_length=100 , verbose_name='توضیحات')
     position = models.ForeignKey(Level , on_delete = models.CASCADE, related_name ='position')
     signatory = models.ForeignKey(Level , on_delete = models.CASCADE , related_name = 'signatory' )
-    secretariat = models.ForeignKey(Level , on_delete = models.CASCADE, related_name ='secretariat')
+    secretariat = models.ForeignKey(DabirKhone , on_delete = models.CASCADE, related_name ='secretariat')
     receivers = models.ForeignKey(Level , on_delete = models.CASCADE, related_name ='receivers')
     Transcript = models.ForeignKey(Level , on_delete = models.CASCADE, related_name ='Transcript')
     ready_text = models.CharField(max_length=50, choices=[('test','test')])
@@ -49,3 +49,6 @@ class Letter(models.Model):
 class PostAppoinment(models.Model):
     post = models.ForeignKey(Root , on_delete=models.CASCADE , related_name= 'post')
     user = models.ForeignKey(CustomUser , on_delete=models.CASCADE , related_name= 'user')
+
+    def __str__(self):
+        return self.post 

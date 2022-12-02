@@ -44,3 +44,15 @@
     background: rgb(216, 88, 88);
     color: rgb(230, 109, 109);
 }
+
+@media (min-width: 992px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1000;
+      display: block;
+      background-color: #CCCCCC;
+    }
+  }
